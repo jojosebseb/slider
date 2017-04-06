@@ -1,0 +1,213 @@
+// init start
+*{
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    color: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    // font-family: LatoReg;
+}
+a{
+    display: block;
+}
+@font-face {
+    font-family: "LatoReg";
+    src: url('../fonts/Lato-Regular.ttf');
+}
+//init end
+
+//pallette
+$right-margin: 350px;
+.fill-input{
+    padding: 8px 10px;
+    outline: none;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 5px;
+    margin-right: 1px;
+    margin-left: 3px;
+}
+.fill-input:focus{
+    border: 1px solid #ccc;
+}
+.colorpicker{
+    padding: 0 3px;
+}
+.section-title{
+    font-family: LatoReg;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px;
+    background: rgb(66, 65, 75);
+    color: white;
+    width: 100%;
+    height: 50px;
+}
+//pallette
+.jo-slide-container{
+    display: flex;
+    height: 100vh;
+    padding-right: $right-margin;
+    position: relative;
+}
+
+#slidePreviewContainer{
+    width: 100%;
+    background: #fff;
+    position: relative;
+    #slideParent{
+        width: 70vw;
+        height: 70vh;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        border: 1px solid #333;
+        transition: all .3s ease;
+        font-family: LatoReg;
+        overflow: hidden;
+    }
+    .default-text{
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border: 1px solid transparent;
+        // padding: 10px;
+        cursor: pointer;
+    }
+    .default-text:hover{
+        border: 1px solid #aaa;
+    }
+    .default-text.hover{
+        border: 1px solid #aaa;
+    }
+}
+.form-group{
+    padding: 10px 10px;
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #fff;
+    width: 100%;
+    .form-label{
+        // vertical-align: center;
+    }
+    .fill-textarea{
+        padding: 8px 10px;
+        vertical-align: middle;
+        outline: none;
+        border: 1px solid #ddd;
+        background: #fff;
+        border-radius: 5px;
+        margin-right: 1px;
+        margin-left: 3px;
+        resize: vertical;
+        height: 100px;
+        width: 70%;
+        font-family: LatoReg;
+    }
+}
+.form-btn{
+    padding: 10px;
+    background: #2a416e;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+.form-btn.image{
+    background: #de7244;
+}
+.w50{
+    width: 50%;
+    .fill-input{
+        width: 45%;
+    }
+}
+#sideMountController{
+    background: #efefef;
+    height: 100%;
+    font-family: Calibri;
+    width: $right-margin;
+    border-left: 1px solid #aaa;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-content: flex-start;
+    z-index: 66;
+    overflow-y: auto;
+
+}
+.jo-drop{
+    width: 100%;
+    max-height: 400px;
+    // height: 100%;
+    transition: all .3s ease;
+}
+.jo-drop.hide{
+    max-height: 0;
+    // height: 0;
+    overflow: hidden;
+}
+.drop-handle{
+    position: relative;
+    cursor: pointer;
+}
+.drop-handle::after{
+    content: "";
+    height: 8px;
+    width: 8px;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%) rotate(135deg);
+    transition: all .3s ease;
+}
+.drop-handle.hide::after{
+    content: "";
+    height: 8px;
+    width: 8px;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.textEditor{
+    // border-bottom: 1px solid #bbb;
+    // border-top: 1px solid #fff;
+    border-top: 1px solid rgba(250,250,250, 0.1);
+    width: 100%;
+    .section-title{
+        background: #2a416e;
+        font-size: 16px;
+        padding: 10px;
+        height: auto;
+        font-weight: normal;
+    }
+}
+.imgEditor{
+    width: 100%;
+
+    .section-title{
+        background: #de7244;
+        font-size: 16px;
+        padding: 10px;
+        height: auto;
+        font-weight: normal;
+    }
+}
