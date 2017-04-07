@@ -71,22 +71,35 @@ $right-margin: 350px;
         font-family: LatoReg;
         overflow: hidden;
     }
-    .default-text{
+    .default-text, .default-img{
         font-size: 30px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        // transform: translate(-50%,-50%);
         border: 1px solid transparent;
         // padding: 10px;
         cursor: pointer;
+        transition: border .3s ease;
     }
+
     .default-text:hover{
-        border: 1px solid #aaa;
+        border: 1px solid rgba(30,30,30, 0.2);
     }
     .default-text.hover{
-        border: 1px solid #aaa;
+        border: 1px solid rgba(30,30,30, 0.2);
     }
+    .default-img:hover{
+        border: 1px solid rgba(30,30,30, 0.2);
+    }
+    .default-img.hover{
+        border: 1px solid rgba(30,30,30, 0.2);
+    }
+}
+.snapped-middle{
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
 }
 .form-group{
     padding: 10px 10px;
@@ -123,6 +136,20 @@ $right-margin: 350px;
 .form-btn.image{
     background: #de7244;
 }
+.form-btn.save{
+    background: rgb(33, 136, 20);
+    float: right;
+    padding: 8px;
+    font-size: 14px;
+    margin-left: 5px;
+}
+.form-btn.del{
+    background: rgb(163, 34, 34);
+    float: right;
+    padding: 8px;
+    font-size: 14px;
+    margin-left: 5px;
+}
 .w50{
     width: 50%;
     .fill-input{
@@ -143,7 +170,11 @@ $right-margin: 350px;
     align-content: flex-start;
     z-index: 66;
     overflow-y: auto;
+    overflow-x: hidden;
 
+}
+#sideMountController.compact{
+    right: -300px;
 }
 .jo-drop{
     width: 100%;
@@ -198,6 +229,15 @@ $right-margin: 350px;
         padding: 10px;
         height: auto;
         font-weight: normal;
+        border-left: 1px solid transparent;
+        transition: all .3s ease;
+    }
+    .section-title.hover{
+        border-left: 5px solid rgb(71, 171, 108);
+    }
+    .section-title.affected{
+        border-left: 5px solid rgb(71, 171, 108);
+        opacity: 0.8;
     }
 }
 .imgEditor{
